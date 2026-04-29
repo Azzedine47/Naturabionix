@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturabionix | العلم في خدمة الطبيعة</title>
+    <style>
+        :root {
+            --primary-color: #2D5A27; /* أخضر غامق يعبر عن النباتات */
+            --accent-color: #D4AF37;  /* ذهبي يعبر عن العسل والتميز */
+            --bg-color: #f9fbf9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* الهيدر */
+        header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* القسم الرئيسي (Hero Section) */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                        url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=1000'); /* صورة تعبر عن المخبر والطبيعة */
+            background-size: cover;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* قسم الرؤية العلمية */
+        .features {
+            padding: 5rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            background: white;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">NATURA<span>BIONIX</span></div>
+        <nav>
+            <a href="#">الرئيسية</a>
+            <a href="#">عن NAX</a>
+            <a href="#">منتجاتنا</a>
+            <a href="#">المحتوى العلمي</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>دمج البيوتكنولوجيا بأسرار الطبيعة</h1>
+            <p>من قلب المختبر إلى يد المستهلك، نقدم منتجات خلية ونباتات مدروسة علمياً لضمان الفعالية والجودة العالية تحت إشراف متخصصين.</p>
+            <a href="#" class="cta-button">اكتشف رؤيتنا</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <span class="icon">🔬</span>
+            <h3>دقة مخبرية</h3>
+            <p>نعتمد على موازين دقيقة ومعايير علمية صارمة في استخلاص المواد الطبيعية.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🌿</span>
+            <h3>أصل نباتي</h3>
+            <p>دراسة عميقة لخصائص النباتات الحيوية لضمان الحصول على أفضل جودة.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🍯</span>
+            <h3>منتجات الخلية</h3>
+            <p>تسويق العسل ومشتقاته برؤية تقنية تجمع بين خبرة المربي وعلم البيوتكنولوجيا.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة لـ Naturabionix (NAX) &copy; 2026</p>
+        <p style="font-size: 0.8rem; opacity: 0.8;">بإشراف المختص: عزالدين معمر الصامت</p>
+    </footer>
+
+    <script>
+        // بما أنك تتعلم JavaScript، هذا كود بسيط للتفاعل
+        console.log("مرحباً بك في واجهة Naturabionix! العلم والطبيعة في مكان واحد.");
+        
+        // تغيير لون الهيدر عند التمرير
+        window.onscroll = function() {
+            let header = document.querySelector('header');
+            if (window.pageYOffset > 50) {
+                header.style.padding = "0.5rem 5%";
+            } else {
+                header.style.padding = "1rem 5%";
+            }
+        };
+    </script>
+</body>
+</html>
