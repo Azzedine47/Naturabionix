@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturabionix | العلم في خدمة الطبيعة</title>
+    <style>
+        :root {
+            --primary-color: #2D5A27; 
+            --accent-color: #D4AF37;  
+            --bg-color: #f9fbf9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .logo span { color: var(--accent-color); }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        /* تأثير الخط تحت الروابط */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            right: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after { width: 100%; }
+
+        /* Hero Section مع تأثير حركة بسيط */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                        url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-attachment: fixed; /* Parallax effect */
+        }
+
+        .hero-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .hero-content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-content h1 { font-size: 3.5rem; color: var(--primary-color); }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.4s;
+            box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-color);
+        }
+
+        /* الكروت مع تأثير الظهور التدريجي */
+        .features {
+            padding: 5rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .feature-card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .icon {
+            transform: rotateY(360deg);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="mainHeader">
+        <div class="logo">NATURA<span>BIONIX</span></div>
+        <nav>
+            <a href="#">الرئيسية</a>
+            <a href="#">عن NAX</a>
+            <a href="#">المخبر</a>
+            <a href="#">اتصل بنا</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content" id="heroContent">
+            <h1>مستقبل الطبيعة بين يديك</h1>
+            <p id="dynamicText">نحن ندمج الدقة المخبرية بعراقة المنتجات الطبيعية لتقديم جودة استثنائية.</p>
+            <a href="#features" class="cta-button" onclick="celebrate()">ابدأ الرحلة معنا</a>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="feature-card">
+            <span class="icon">🔬</span>
+            <h3>دقة 0.01</h3>
+            <p>لأننا نؤمن أن العلم يبدأ من الموازين الدقيقة والنسب المدروسة.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🧬</span>
+            <h3>بيوتكنولوجيا نباتية</h3>
+            <p>تطبيق أحدث الأبحاث العلمية في استخلاص الفوائد من قلب النبات.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">✨</span>
+            <h3>علامة NAX</h3>
+            <p>رؤية "عزالدين معمر الصامت" لتحويل الطبيعة إلى منتج عالي الجودة.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Naturabionix - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        // 1. تأثير ظهور الـ Hero عند التحميل
+        window.onload = () => {
+            document.getElementById('heroContent').classList.add('show');
+            updateWelcomeMessage();
+        };
+
+        // 2. تحديث الرسالة بناءً على الوقت (تفاعل ذكي)
+        function updateWelcomeMessage() {
+            const p = document.getElementById('dynamicText');
+            const hour = new Date().getHours();
+            if (hour < 12) p.innerText = "صباح الخير! ابدأ يومك بلمسة علمية طبيعية مع NAX.";
+            else p.innerText = "مساء الخير! اكتشف أسرار البيوتكنولوجيا في منتجاتنا الطبيعية.";
+        }
+
+        // 3. تأثير ظهور العناصر عند التمرير (Scroll Reveal)
+        const cards = document.querySelectorAll('.feature-card');
+        window.addEventListener('scroll', () => {
+            // تأثير الهيدر
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 100) {
+                header.style.padding = "0.5rem 5%";
+                header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
+            } else {
+                header.style.padding = "1rem 5%";
+                header.style.boxShadow = "none";
+            }
+
+            // ظهور الكروت
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < window.innerHeight - 100) {
+                    card.classList.add('reveal');
+                }
+            });
+        });
+
+        // 4. تفاعل بسيط عند الضغط على الزر
+        function celebrate() {
+            alert("مرحباً بك في عالم Naturabionix! نحن نجهز لك شيئاً استثنائياً.");
+        }
+    </script>
+</body>
+</html>
